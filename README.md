@@ -25,12 +25,12 @@ Short term property owners do not have an efficent way to decide the listing pri
 
 ## Data Understanding
 
-![Screenshot](CustomerAge.png)
+![Screenshot](Model_Comparison_1.png)
   
 
 ## Data Preparation
 Dummies encoded for object columns and scaled.
-![Screenshot](Classifier_Dataset.png)
+![Screenshot](Model_Comparison_2.png)
 
 ## Model
 Scikit-learn classification models - RandomForest, LogisticRegression,DecisionTreeClassifier,KNearestNeighborClassifier,SVMClassifer and tuned for hyperparameters.
