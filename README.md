@@ -8,9 +8,9 @@ An analysis of 8680 rental listings for the city of San Francisco used to model 
 - Objective
 - Rationale
 - Methodology
-- Results
+- Evaluation
+- Recommedations and next steps
 - Conclusion
-- Next steps
 
 
 ## Business Summary
@@ -23,28 +23,21 @@ Datasource: https://public.opendatasoft.com/explore/dataset/airbnb-listings/expo
 ## Rationale
 Short term property owners do not have an efficent way to decide the listing price. Platforms like VRBO,AirBnB provide can option for dynamic pricing, which the property owners/managers do not have any control. By integrating with the VRBO,AirBnB apis, this approach can assist property owners/managers to better handle their listing efficiently.
 
-## Data Understanding
-
-![Screenshot](Model_Comparison_1.png)
-  
-
-## Data Preparation
-Dummies encoded for object columns and scaled.
-![Screenshot](Model_Comparison_2.png)
-
-## Model
-Scikit-learn classification models - RandomForest, LogisticRegression,DecisionTreeClassifier,KNearestNeighborClassifier,SVMClassifer and tuned for hyperparameters.
+## Methodology
+Scikit-learn regression models - LinearRegression, DecisionTree, RandomForest, GradientBoost. Tuned using hyperparameters where necessary.
 
 ## Evaluation
-![Screenshot](Classifiers_Comparison.png)
+![Screenshot](Model_Comparison_1.png)
+  
+![Screenshot](Model_Comparison_2.png)
 
-
-
-## Recommendations
-DecisionTree and KNearestNeighbor classifier with tuned hyperparameters are the best performing classifier and does not overfit on the training data. This model can be deployed to production for sales,customer service team to access quickly and provide necessary marketing data for customers to decide on opening an deposit account.
+## Recommendations and Next steps
+Dataset used as part of this exercise is for the city of San Francisco and the approach can be scaled at national and international levels. 
+GradientBoost performed better when compared to other models, but had a slower response. The saved gradientboost model can be loaded and evaluated through an api endpoint, 
+thereby providing a means to integrate with AirBnB,VRBO api. Load more dataset for better accuracy. Expand the feature set to include amenities and features.
 
 ## Conclusion
-DecisionTree classifier or KNearestNeighbor classifier is the best model to target customers. SVM took a long time to train and might be not be suitable for dataset with large samples. Logistic regression classifier accuracy could not be improved after tuning.
+Listing price for short-term rental seems to mainly based on bedrooms, #people accomodated, beds, bathrooms,cleaning fee as per this model.  
 
 
 
